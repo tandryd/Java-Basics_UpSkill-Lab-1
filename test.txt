@@ -1,6 +1,4 @@
 Hello world
 change 1
-Feature 1
-feature 2
-f3
-f4
+Change 2
+Change 3
