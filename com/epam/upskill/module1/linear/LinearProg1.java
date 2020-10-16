@@ -1,3 +1,5 @@
+package com.epam.upskill.module1.linear;
+
 import java.util.*;
 
 public class LinearProg1 {

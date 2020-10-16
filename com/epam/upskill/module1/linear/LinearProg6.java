@@ -1,3 +1,5 @@
+package com.epam.upskill.module1.linear;
+
 import static java.lang.Math.*;
 import java.util.Scanner;
 

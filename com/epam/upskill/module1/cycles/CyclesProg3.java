@@ -1,3 +1,5 @@
+package com.epam.upskill.module1.cycles;
+
 import static java.lang.Math.pow;
 public class CyclesProg3 {
     public static void main(String[] args) {

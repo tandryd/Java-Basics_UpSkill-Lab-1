@@ -1,3 +1,5 @@
+package com.epam.upskill.module1.branching;
+
 import java.util.Scanner;
 
 public class BranchingProg3 {

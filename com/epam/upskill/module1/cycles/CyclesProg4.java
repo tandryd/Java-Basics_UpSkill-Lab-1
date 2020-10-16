@@ -1,3 +1,5 @@
+package com.epam.upskill.module1.cycles;
+
 import java.math.BigInteger;
 import static java.lang.Math.pow;
 public class CyclesProg4 {

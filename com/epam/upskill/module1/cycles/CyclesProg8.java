@@ -1,3 +1,5 @@
+package com.epam.upskill.module1.cycles;
+
 import java.util.*;
 public class CyclesProg8 {
     static Scanner scanner = new Scanner(System.in);

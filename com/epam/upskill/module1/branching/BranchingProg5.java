@@ -1,3 +1,5 @@
+package com.epam.upskill.module1.branching;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import static java.lang.Math.*;
