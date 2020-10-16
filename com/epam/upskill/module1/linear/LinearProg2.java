@@ -7,14 +7,14 @@ public class LinearProg2 {
     public static void main(String[] args) {
 
         System.out.print("Введите значение a: ");
-        Scanner scan = new Scanner(System.in);
-        double a = scan.nextDouble();
+        Scanner scanner = new Scanner(System.in);
+        double a = scanner.nextDouble();
 
         System.out.print("Введите значение b: ");
-        double b = scan.nextDouble();
+        double b = scanner.nextDouble();
 
         System.out.print("Введите значение c: ");
-        double c = scan.nextDouble();
+        double c = scanner.nextDouble();
 
         double temp = sqrt(pow(b, 2) + 4 * a * c);
 
