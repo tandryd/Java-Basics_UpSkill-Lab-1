@@ -7,11 +7,11 @@ public class LinearProg3 {
     public static void main(String[] args) {
 
         System.out.print("Введите значение x: ");
-        Scanner scan = new Scanner(System.in);
-        double x = scan.nextDouble();
+        Scanner scanner = new Scanner(System.in);
+        double x = scanner.nextDouble();
 
         System.out.print("Введите значение y: ");
-        double y = scan.nextDouble();
+        double y = scanner.nextDouble();
 
         double result = (((sin(x) + cos(y)) / cos(x)) - sin(y)) * tan(x * y);
         System.out.println("результат = " + result);
