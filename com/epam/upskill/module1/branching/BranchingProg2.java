@@ -18,7 +18,7 @@ public class BranchingProg2 {
         System.out.print("Введите значениие d: ");
         double d = scan.nextDouble();
 
-        MathUtilsForBranching minAandB= new MathUtilsForBranching();
+        MathUtilsForBranching minAandB = new MathUtilsForBranching();
         MathUtilsForBranching minCandD = new MathUtilsForBranching();
         MathUtilsForBranching maxOfTwoMin = new MathUtilsForBranching();
 

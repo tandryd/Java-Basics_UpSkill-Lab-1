@@ -5,11 +5,15 @@ import java.util.Scanner;
 public class CyclesProg2 {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        double x, a, b, period_h, function_F;
+        double x;
+        double startOfSegment;
+        double endOfSegment;
+        double periodH;
+        double functionF;
         while (true) {
             try {
                 System.out.print("Введите значение начала отрезка a: ");
-                a = scanner.nextDouble();
+                startOfSegment = scanner.nextDouble();
             } catch (InputMismatchException e) {
                 System.out.print("Некорректные данные. Попробуйте еще раз. ");
                 continue;
@@ -18,7 +22,7 @@ public class CyclesProg2 {
         while (true) {
             try {
                 System.out.print("Введите значение конца отрезка b: ");
-                b = scanner.nextDouble();
+                endOfSegment = scanner.nextDouble();
             } catch (InputMismatchException e) {
                 System.out.print("Некорректные данные. Попробуйте еще раз. ");
                 continue;
@@ -28,7 +32,7 @@ public class CyclesProg2 {
         while (true) {
             try {
                 System.out.print("Введите шаг h: ");
-                period_h = scanner.nextDouble();
+                periodH = scanner.nextDouble();
             } catch (InputMismatchException e) {
                 System.out.print("Некорректные данные. Попробуйте еще раз. ");
                 continue;
@@ -36,13 +40,13 @@ public class CyclesProg2 {
             break;
         }
 
-        for (x = a; x <= b; x += period_h) {
+        for (x = startOfSegment; x <= endOfSegment; x += periodH) {
             if (x > 2)
-                function_F = x;
-            else function_F = -x;
+                functionF = x;
+            else functionF = -x;
                 if (x == 0)
-                function_F = 0;
-                System.out.print(function_F + " ");
+                functionF = 0;
+                System.out.print(functionF + " ");
         }
     }
 }

@@ -21,7 +21,7 @@ public class BranchingProg4 {
         System.out.print("Введите высоту кирпича Z = ");
         double heightBrick = scanner.nextDouble();
 
-        if (((widthHole>=widthBrick & lengthHole>=lengthBrick) | (widthHole>=lengthBrick & lengthHole>=widthBrick)) || ((widthHole>=widthBrick & lengthHole>=heightBrick) | (widthHole>=heightBrick & lengthHole>=widthBrick)) || ((widthHole>=lengthBrick & lengthHole>=heightBrick) | (widthHole>=heightBrick & lengthHole>=lengthBrick))) {
+        if (((widthHole>=widthBrick && lengthHole>=lengthBrick) || (widthHole>=lengthBrick && lengthHole>=widthBrick)) || ((widthHole>=widthBrick && lengthHole>=heightBrick) || (widthHole>=heightBrick && lengthHole>=widthBrick)) || ((widthHole>=lengthBrick && lengthHole>=heightBrick) || (widthHole>=heightBrick && lengthHole>=lengthBrick))) {
             System.out.println("Кирпич проходит через отверстие");
         }
             else System.out.println("Кирпич не проходит через отверстие");
