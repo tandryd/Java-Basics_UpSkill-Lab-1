@@ -1,8 +1,6 @@
 package com.epam.upskill.module2.arrays;
-
 import java.util.Arrays;
 import java.util.Scanner;
-
 public class ArrayProg2 {
     public static void main(String[] args) {
         int myArrayLength;
@@ -12,7 +10,10 @@ public class ArrayProg2 {
             try {
                 System.out.print("Enter the length of the array: ");
                 myArrayLength = Integer.parseInt(scanner.nextLine());
-            } catch (NegativeArraySizeException | NumberFormatException e) {// не определяется NegativeArraySizeException
+                if (myArrayLength < 0) {
+                    throw new IllegalArgumentException();
+                }
+            } catch (NegativeArraySizeException | NumberFormatException e) {
                 System.out.println("Incorrect data. Please enter a natural number ");
                 continue;
             }
@@ -31,6 +32,5 @@ public class ArrayProg2 {
         }
         System.out.println(Arrays.toString(myArray));
         System.out.println("Number of replacement = " + replacementsNumber);
-
-        }
+    }
 }
