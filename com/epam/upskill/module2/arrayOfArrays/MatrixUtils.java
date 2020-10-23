@@ -1,7 +1,6 @@
 package com.epam.upskill.module2.arrayOfArrays;
-
+import java.util.Random;
 import java.util.Scanner;
-
 public class MatrixUtils {
     static int getMatrixHeight(Scanner scanner) {
         int myMatrixHeight;
@@ -43,6 +42,15 @@ public class MatrixUtils {
             System.out.println((i + 1) + "-th string of matrix: ");
             for (int j = 0; j < myMatrixLength; j++) {
                 myMatrix[i][j] = scanner.nextInt();
+            }
+        }
+    }
+
+    static void getRandomMatrix(int[][] myMatrix) {
+        Random random = new Random();
+        for (int i = 0; i < myMatrix.length; i++) {
+            for (int j = 0; j < myMatrix[i].length; j++) {
+                myMatrix[i][j] = random.nextInt(10);
             }
         }
     }
