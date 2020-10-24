@@ -8,7 +8,7 @@ public class ArraysOfArraysProg5 {
         int[][] myMatrix = new int[myMatrixHeight][myMatrixLength];
         int temp = 1;
         int temp2 = myMatrixHeight;
-        for (int i = 0; i < myMatrixHeight; i++) {
+        for (int i = 0; i < myMatrix.length; i++) {
             for (int j = temp2-1; j >= 0; j--) {
                 if (i == temp -1) {
                     myMatrix[i][j] = temp;

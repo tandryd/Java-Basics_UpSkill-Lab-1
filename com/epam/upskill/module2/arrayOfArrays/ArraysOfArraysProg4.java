@@ -1,6 +1,6 @@
 package com.epam.upskill.module2.arrayOfArrays;
 import java.util.Scanner;
-public class ArroysOfArroysProg4 {
+public class ArraysOfArraysProg4 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int myMatrixHeight = MatrixUtils.getMatrixHeight(scanner);
