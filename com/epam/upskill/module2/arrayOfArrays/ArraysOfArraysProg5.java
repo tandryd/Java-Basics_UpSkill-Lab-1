@@ -1,11 +1,13 @@
+/*Сформировать квадратную матрицу порядка n по заданному образцу(n - четное):
+ */
 package com.epam.upskill.module2.arrayOfArrays;
 import java.util.Scanner;
+import static com.epam.upskill.module2.arrayOfArrays.MatrixUtils.*;
 public class ArraysOfArraysProg5 {
     public static void main (String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int myMatrixHeight = MatrixUtils.getMatrixHeight(scanner);
-        int myMatrixLength = myMatrixHeight;
-        int[][] myMatrix = new int[myMatrixHeight][myMatrixLength];
+        int myMatrixHeight = getMatrixHeight(scanner);
+          int[][] myMatrix = new int[myMatrixHeight][myMatrixHeight];
         int temp = 1;
         int temp2 = myMatrixHeight;
         for (int i = 0; i < myMatrix.length; i++) {
@@ -17,6 +19,6 @@ public class ArraysOfArraysProg5 {
             temp++;
             temp2--;
         }
-        MatrixUtils.printMatrix(myMatrixHeight, myMatrixLength, myMatrix);
+        superPrintIntMatrix(myMatrixHeight, myMatrixHeight, myMatrix);
     }
 }

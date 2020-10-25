@@ -1,13 +1,16 @@
+/*Дана матрица. Вывести на экран все нечетные столбцы, у которых первый элемент больше последнего.
+ */
 package com.epam.upskill.module2.arrayOfArrays;
 import java.util.Scanner;
+import static com.epam.upskill.module2.arrayOfArrays.MatrixUtils.*;
 public class ArraysOfArraysProg1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int myMatrixHeight = MatrixUtils.getMatrixHeight(scanner);
-        int myMatrixLength = MatrixUtils.getMatrixLength(scanner);
+        int myMatrixHeight = getMatrixHeight(scanner);
+        int myMatrixLength = getMatrixLength(scanner);
         int[][] myMatrix = new int[myMatrixHeight][myMatrixLength];
-        MatrixUtils.getMatrixFromKeyboard(scanner, myMatrixHeight, myMatrixLength, myMatrix);
-        MatrixUtils.printMatrix(myMatrixHeight, myMatrixLength, myMatrix);
+        getMatrixFromKeyboard(scanner, myMatrixHeight, myMatrixLength, myMatrix);
+        printIntMatrix(myMatrixHeight, myMatrixLength, myMatrix);
         System.out.println("the columns we were looking for:");
         for (int i = 0; i < myMatrixHeight; i++) {
             for (int j = 0; j < myMatrixLength; j += 2) {

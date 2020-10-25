@@ -1,13 +1,16 @@
+/*Дана квадратная матрица. Вывести на экран элементы, стоящие на диагонали.
+ */
 package com.epam.upskill.module2.arrayOfArrays;
 import java.util.Scanner;
+import static com.epam.upskill.module2.arrayOfArrays.MatrixUtils.*;
 public class ArraysOfArraysProg2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int myMatrixHeight = MatrixUtils.getMatrixHeight(scanner);
-        int myMatrixLength = MatrixUtils.getMatrixLength(scanner);
+        int myMatrixHeight = getMatrixHeight(scanner);
+        int myMatrixLength = getMatrixLength(scanner);
         int[][] myMatrix = new int[myMatrixHeight][myMatrixLength];
-        MatrixUtils.getMatrixFromKeyboard(scanner, myMatrixHeight, myMatrixLength, myMatrix);
-        MatrixUtils.printMatrix(myMatrixHeight, myMatrixLength, myMatrix);
+        getMatrixFromKeyboard(scanner, myMatrixHeight, myMatrixLength, myMatrix);
+        printIntMatrix(myMatrixHeight, myMatrixLength, myMatrix);
         System.out.println("main diagonal:");
         for (int i = 0, j = 0; i < myMatrixHeight & j < myMatrixLength; i++) {
             System.out.print(myMatrix[i][i] + " ");

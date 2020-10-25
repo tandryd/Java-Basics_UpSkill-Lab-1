@@ -37,7 +37,8 @@ public class MatrixUtils {
         }
         return myMatrixLength;
     }
-     static void getMatrixFromKeyboard(Scanner scanner, int myMatrixHeight, int myMatrixLength, int[][] myMatrix) {
+
+    static void getMatrixFromKeyboard(Scanner scanner, int myMatrixHeight, int myMatrixLength, int[][] myMatrix) {
         for (int i = 0; i < myMatrixHeight; i++) {
             System.out.println((i + 1) + "-th string of matrix: ");
             for (int j = 0; j < myMatrixLength; j++) {
@@ -55,7 +56,7 @@ public class MatrixUtils {
         }
     }
 
-     static void printMatrix(int myMatrixHeight, int myMatrixLength, int[][] myMatrix) {
+    static void printIntMatrix(int myMatrixHeight, int myMatrixLength, int[][] myMatrix) {
         for (int i = 0; i < myMatrixHeight; i++) {
             for (int j = 0; j < myMatrixLength; j++) {
                 System.out.print(" " + myMatrix[i][j] + " ");
@@ -63,5 +64,59 @@ public class MatrixUtils {
             System.out.println();
         }
     }
+
+    static void printDoubleMatrix(int myMatrixHeight, int myMatrixLength, double[][] myMatrix) {
+        for (int i = 0; i < myMatrixHeight; i++) {
+            for (int j = 0; j < myMatrixLength; j++) {
+                System.out.printf("%.6f \t", myMatrix[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
+    static void superPrintIntMatrix(int myMatrixHeight, int myMatrixLength, int myMatrix[][]) {
+        int maxLength = 0;
+        String format = "";
+        int temp = 0;
+        for (int i = 0; i < myMatrixHeight; i++) {
+            for (int j = 0; j < myMatrixLength; j++) {
+                temp = String.valueOf(myMatrix[i][j]).length();
+                if (temp > maxLength) {
+                    maxLength = temp;
+                }
+            }
+        }
+        format = "%" + maxLength + "d\t";
+        for (int i = 0; i < myMatrix.length; i++) {
+            for (int j = 0; j < myMatrix[i].length; j++) {
+                System.out.printf(format, myMatrix[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
+    static int findMaxInArray(int[] newArray) {
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < newArray.length; i++) {
+            if (newArray[i] >= max) {
+                max = newArray[i];
+            }
+        }
+        return max;
+    }
+
+    static int findMaxInMatrix(int[][] myMatrix) {
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < myMatrix.length; i++) {
+            for (int j = 0; j < myMatrix[i].length; j++) {
+                if (myMatrix[i][j] >= max) {
+                    max = myMatrix[i][j];
+                }
+            }
+        }
+        return max;
+    }
+
+
 
 }
