@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class ArrayProg4 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int myArrayLength = ArrayUtils.getMyArrayLength(scanner);
+        int myArrayLength = ArrayUtils.getArrayLengthFromKeyboard(scanner);
         double [] myArray = ArrayUtils.getArrayDoubleFromKeyboard(myArrayLength);
         System.out.println(Arrays.toString(myArray));
         ArrayUtils.replaceMaxWithMin(myArray);
