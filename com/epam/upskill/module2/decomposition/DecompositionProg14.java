@@ -4,10 +4,10 @@ package com.epam.upskill.module2.decomposition;
 import java.util.Scanner;
 public class DecompositionProg14 {
     public static void main(String[] args) {
-        int endOfSegment = getIntegerfromConsole();
+        int endOfSegment = getIntegerFromConsole();
         printArmstrongNambersOnSement(endOfSegment);
     }
-    private static int getIntegerfromConsole() {
+    private static int getIntegerFromConsole() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the value of the segment end (k): ");
         int k = scanner.nextInt();

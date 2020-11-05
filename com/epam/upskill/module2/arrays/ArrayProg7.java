@@ -5,7 +5,7 @@ public class ArrayProg7 {
     public static void main(String[] args) {
         int sum = 0;
         Scanner scanner = new Scanner(System.in);
-        int n = ArrayUtils.getMyArrayLength(scanner);
+        int n = ArrayUtils.getArrayLengthFromKeyboard(scanner);
         int myArrayDoubledLenght = n * 2;
         int[] myArray = ArrayUtils.getArrayIntFromKeyboard(myArrayDoubledLenght);
         System.out.println(Arrays.toString(myArray));

@@ -13,24 +13,26 @@ public class ArrayProg2 {
                 if (myArrayLength < 0) {
                     throw new IllegalArgumentException();
                 }
-            } catch (NegativeArraySizeException | NumberFormatException e) {
+            } catch (IllegalArgumentException e) {
                 System.out.println("Incorrect data. Please enter a natural number ");
                 continue;
             }
+            double[] myArray = ArrayUtils.getArrayDouble(myArrayLength);
+            System.out.println(Arrays.toString(myArray));
+            System.out.print("Enter number Z: ");
+            if (scanner.hasNextDouble()) {
+                double z = scanner.nextDouble();
+                scanner.close();
+                for (int i = 0; i < myArrayLength; i++) {
+                    if (myArray[i] > z){
+                        myArray[i] = z;
+                        replacementsNumber =++replacementsNumber;
+                    }
+                }
+                System.out.println(Arrays.toString(myArray));
+                System.out.println("Number of replacement = " + replacementsNumber);
+            }
             break;
         }
-        double[] myArray = ArrayUtils.getArrayDouble(myArrayLength);
-        System.out.println(Arrays.toString(myArray));
-        System.out.print("Enter number Z: ");
-        double z = scanner.nextDouble();
-
-        for (int i = 0; i < myArrayLength; i++) {
-            if (myArray[i] > z){
-        myArray[i] = z;
-        replacementsNumber =++replacementsNumber;
-            }
-        }
-        System.out.println(Arrays.toString(myArray));
-        System.out.println("Number of replacement = " + replacementsNumber);
     }
 }

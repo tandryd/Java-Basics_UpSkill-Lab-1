@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class ArrayProg9 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int myArrayLenght = ArrayUtils.getMyArrayLength(scanner);
+        int myArrayLenght = ArrayUtils.getArrayLengthFromKeyboard(scanner);
         int[] myArray = ArrayUtils.getArrayIntFromKeyboard(myArrayLenght);
         Arrays.sort(myArray);
         System.out.println(Arrays.toString(myArray));
