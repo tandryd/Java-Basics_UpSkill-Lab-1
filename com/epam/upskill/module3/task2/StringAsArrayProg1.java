@@ -1,5 +1,5 @@
 /*  Дан массив названий переменных в camelCase. Преобразовать названия в snake_case. */
-package com.epam.upskill.module3.stringAsArray;
+package com.epam.upskill.module3.task2;
 import java.util.Arrays;
 
 public class StringAsArrayProg1 {

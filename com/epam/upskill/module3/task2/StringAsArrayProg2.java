@@ -1,5 +1,5 @@
 /*  Замените в строке все вхождения 'word' на 'letter' */
-package com.epam.upskill.module3.stringAsArray;
+package com.epam.upskill.module3.task2;
 
 public class StringAsArrayProg2 {
     public static void main(String[] args) {

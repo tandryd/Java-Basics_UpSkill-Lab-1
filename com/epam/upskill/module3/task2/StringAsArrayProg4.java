@@ -1,5 +1,5 @@
 /*В строке найти количество чисел */
-package com.epam.upskill.module3.stringAsArray;
+package com.epam.upskill.module3.task2;
 
 public class StringAsArrayProg4 {
     public static void main(String[] args) {
