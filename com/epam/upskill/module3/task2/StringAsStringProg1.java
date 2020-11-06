@@ -1,5 +1,5 @@
 /* Дан текст (строка). Найдите наибольшее количество подряд идущих пробелов в нем. */
-package com.epam.upskill.module3.task1;
+package com.epam.upskill.module3.task2;
 public class StringAsStringProg1 {
     public static void main(String[] args) {
         String text = "Monsters stalking through the night.\n" +
