@@ -1,6 +1,7 @@
 /* Дан текст (строка). Найдите наибольшее количество подряд идущих пробелов в нем. */
 package com.epam.upskill.module3.task2;
 public class StringAsStringProg1 {
+    
     public static void main(String[] args) {
         String text = "Monsters stalking through the night.\n" +
                 "Halloween is      the   Night    of Fright.\n" +
@@ -11,11 +12,11 @@ public class StringAsStringProg1 {
         System.out.println(moreSpaces);
     }
 
-    private static int findSpaces(String line) {
+    private static int findSpaces(String text) {
         int count = 0;
         int maxCount = 0;
-        for (int i = 0; i < line.length(); i++) {
-            if (line.charAt(i) == ' ') {
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == ' ') {
                 count++;
             } else {
                 if (maxCount < count) {
