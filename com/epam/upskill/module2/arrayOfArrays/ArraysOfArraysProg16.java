@@ -9,6 +9,7 @@ import static com.epam.upskill.module2.arrayOfArrays.MatrixUtils.*;
 public class ArraysOfArraysProg16 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the Height of the matrix: ");
         int n = getMatrixHeight(scanner);
         int[][] myMagicMatrix = new int[n][n];
         int number = 1;
@@ -37,7 +38,7 @@ public class ArraysOfArraysProg16 {
                 }
             }
         }
-        superPrintIntMatrix(n,n,myMagicMatrix);
+        formatPrintIntMatrix(n,n,myMagicMatrix);
     }
 }
 

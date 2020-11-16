@@ -6,12 +6,11 @@ public class MatrixUtils {
         int myMatrixHeight;
         while (true) {
             try {
-                System.out.print("Enter the height of the matrix: ");
                 myMatrixHeight = Integer.parseInt(scanner.nextLine());
                 if (myMatrixHeight < 0) {
                     throw new IllegalArgumentException();
                 }
-            } catch (NegativeArraySizeException | NumberFormatException e) {
+            } catch (IllegalArgumentException e) {
                 System.out.println("Incorrect data. Please enter a natural number ");
                 continue;
             }
@@ -20,29 +19,30 @@ public class MatrixUtils {
         return myMatrixHeight;
     }
 
-    static int getMatrixLength(Scanner scanner) {
-        int myMatrixLength;
+    static int getMatrixHeightOdd(Scanner scanner) {
+        int myMatrixHeight;
         while (true) {
             try {
-                System.out.print("Enter the length of the matrix: ");
-                myMatrixLength = Integer.parseInt(scanner.nextLine());
-                if (myMatrixLength < 0) {
+                myMatrixHeight = Integer.parseInt(scanner.nextLine());
+                if (myMatrixHeight < 0 || myMatrixHeight%2==0) {
                     throw new IllegalArgumentException();
                 }
-            } catch (NegativeArraySizeException | NumberFormatException e) {
-                System.out.println("Incorrect data. Please enter a natural number ");
+            } catch (IllegalArgumentException e) {
+                System.out.println("Incorrect data. Please enter a natural odd number ");
                 continue;
             }
             break;
         }
-        return myMatrixLength;
+        return myMatrixHeight;
     }
 
     static void getMatrixFromKeyboard(Scanner scanner, int myMatrixHeight, int myMatrixLength, int[][] myMatrix) {
         for (int i = 0; i < myMatrixHeight; i++) {
             System.out.println((i + 1) + "-th string of matrix: ");
             for (int j = 0; j < myMatrixLength; j++) {
+                if (scanner.hasNextInt()){
                 myMatrix[i][j] = scanner.nextInt();
+                }
             }
         }
     }
@@ -74,7 +74,7 @@ public class MatrixUtils {
         }
     }
 
-    static void superPrintIntMatrix(int myMatrixHeight, int myMatrixLength, int myMatrix[][]) {
+    static void formatPrintIntMatrix(int myMatrixHeight, int myMatrixLength, int myMatrix[][]) {
         int maxLength = 0;
         String format = "";
         int temp = 0;
@@ -116,7 +116,4 @@ public class MatrixUtils {
         }
         return max;
     }
-
-
-
 }

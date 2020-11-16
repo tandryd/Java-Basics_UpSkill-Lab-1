@@ -7,8 +7,10 @@ import static com.epam.upskill.module2.arrayOfArrays.MatrixUtils.*;
 public class ArraysOfArraysProg14 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the height of the matrix: ");
         int myMatrixHeight = getMatrixHeight(scanner);
-        int myMatrixLength = getMatrixLength(scanner);
+        System.out.print("Enter the Length of the matrix: ");
+        int myMatrixLength = getMatrixHeight(scanner);
         int[][] myMatrix = new int[myMatrixHeight][myMatrixLength];
         for (int i = 0; i < myMatrix.length; i++) {
             for (int j = 0; j < myMatrix[i].length; j++) {
@@ -26,7 +28,7 @@ public class ArraysOfArraysProg14 {
                 myMatrix[i][j] = a;
             }
         }
-        superPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
+        formatPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
     }
 }
 

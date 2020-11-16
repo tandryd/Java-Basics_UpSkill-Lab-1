@@ -9,11 +9,13 @@ import static com.epam.upskill.module2.arrayOfArrays.MatrixUtils.*;
 public class ArraysOfArraysProg8 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the height of the matrix: ");
         int myMatrixHeight = getMatrixHeight(scanner);
-        int myMatrixLength = getMatrixLength(scanner);
+        System.out.print("Enter the length of the matrix: ");
+        int myMatrixLength = getMatrixHeight(scanner);
         int[][] myMatrix = new int[myMatrixHeight][myMatrixLength];
         getRandomMatrix(myMatrix);
-        superPrintIntMatrix(myMatrixHeight, myMatrixLength, myMatrix);
+        formatPrintIntMatrix(myMatrixHeight, myMatrixLength, myMatrix);
         System.out.println("Enter column numbers: ");
         int column1 = scanner.nextInt();
         int column2 = scanner.nextInt();
@@ -27,7 +29,7 @@ public class ArraysOfArraysProg8 {
                 }
             }
         }
-        superPrintIntMatrix(myMatrixHeight, myMatrixLength, myMatrix);
+        formatPrintIntMatrix(myMatrixHeight, myMatrixLength, myMatrix);
     }
 }
 

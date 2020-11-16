@@ -5,10 +5,11 @@ import static com.epam.upskill.module2.arrayOfArrays.MatrixUtils.*;
 public class ArraysOfArraysProg10 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the height of the matrix: ");
         int myMatrixHeight = getMatrixHeight(scanner);
         int [][] myMatrix = new int [myMatrixHeight][myMatrixHeight];
         getMatrixFromKeyboard(scanner,myMatrixHeight, myMatrixHeight,myMatrix);
-        superPrintIntMatrix(myMatrixHeight, myMatrixHeight,myMatrix);
+        formatPrintIntMatrix(myMatrixHeight, myMatrixHeight,myMatrix);
         System.out.println("Positive elements of the main diagonal: ");
         for (int i = 0; i < myMatrix.length; i++) {
             for (int j = 0; j < myMatrix[i].length; j++) {

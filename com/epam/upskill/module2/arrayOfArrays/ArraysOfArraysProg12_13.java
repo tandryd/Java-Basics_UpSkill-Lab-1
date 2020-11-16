@@ -8,23 +8,25 @@ import static com.epam.upskill.module2.arrayOfArrays.MatrixUtils.*;
 public class ArraysOfArraysProg12_13 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the height of the matrix: ");
         int myMatrixHeight = getMatrixHeight(scanner);
-        int myMatrixLength = getMatrixLength(scanner);
+        System.out.print("Enter the Length of the matrix: ");
+        int myMatrixLength = getMatrixHeight(scanner);
         int[][] myMatrix = new int[myMatrixHeight][myMatrixLength];
         getRandomMatrix(myMatrix);
-        superPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
+        formatPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
         System.out.println("sort rows up: ");
         sortRowsUp(myMatrix);
-        superPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
+        formatPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
         System.out.println("sort rows down: ");
         sortRowsDown(myMatrix);
-        superPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
+        formatPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
         System.out.println("sort columns up: ");
         sortColumnsUp(myMatrix);
-        superPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
+        formatPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
         System.out.println("sort columns down: ");
         sortColumnsDown(myMatrix);
-        superPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
+        formatPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
     }
     private static void sortRowsUp(int[][] myMatrix) {
         boolean isSorted = false;
