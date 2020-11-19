@@ -12,7 +12,7 @@ public class ArraysOfArraysProg9 {
         System.out.print("Enter the Length of the matrix: ");
         int myMatrixLength = getMatrixHeight(scanner);
         int[][] myMatrix = new int[myMatrixHeight][myMatrixLength];
-        getMatrixFromKeyboard(scanner, myMatrixHeight, myMatrixLength, myMatrix);
+        getNaturalMatrixFromKeyboard(scanner, myMatrixHeight, myMatrixLength, myMatrix);
         formatPrintIntMatrix(myMatrixHeight, myMatrixLength, myMatrix);
         int[] arraySum = new int[myMatrix[0].length];
         for (int i = 0; i < myMatrixLength; i++) {
@@ -24,10 +24,34 @@ public class ArraysOfArraysProg9 {
         }
         System.out.println("The sum of column elements: ");
         for (int j : arraySum) {
-            System.out.printf(j + "\t");
+            System.out.print(j + "\t");
         }
         System.out.println();
         System.out.println("Max sum: " + findMaxInArray(arraySum));
+        scanner.close();
+    }
+
+    static void getNaturalMatrixFromKeyboard(Scanner scanner, int myMatrixHeight, int myMatrixLength, int[][] myMatrix)  {
+        for (int i = 0; i < myMatrixHeight; i++) {
+            System.out.println((i + 1) + "-th string of matrix: ");
+            for (int j = 0; j < myMatrixLength; j++) {
+                if (scanner.hasNextInt()){
+                    int temp = scanner.nextInt();
+                    if (temp>0) {
+                        myMatrix[i][j] = temp;
+                    }
+                        else {
+                            System.out.println("Please, enter positive number");
+                            j--;
+                        }
+                }
+                else {
+                    System.out.println("Incorrect input. Please, enter positive number ");
+                    j--;
+                    scanner.next();
+                }
+            }
+        }
     }
 }
 

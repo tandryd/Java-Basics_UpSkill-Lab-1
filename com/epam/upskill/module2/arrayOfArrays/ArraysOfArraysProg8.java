@@ -16,9 +16,16 @@ public class ArraysOfArraysProg8 {
         int[][] myMatrix = new int[myMatrixHeight][myMatrixLength];
         getRandomMatrix(myMatrix);
         formatPrintIntMatrix(myMatrixHeight, myMatrixLength, myMatrix);
-        System.out.println("Enter column numbers: ");
-        int column1 = scanner.nextInt();
-        int column2 = scanner.nextInt();
+        System.out.println("Please enter the 1-th column number!");
+        int column1 = getColumnWithinMatrix (scanner, myMatrixLength);
+        System.out.println("Please enter the 2-th column number!");
+        int column2 = getColumnWithinMatrix (scanner, myMatrixLength);
+        changeColumnsWithinMatrix(myMatrix, column1, column2);
+        formatPrintIntMatrix(myMatrixHeight, myMatrixLength, myMatrix);
+        scanner.close();
+    }
+
+    private static void changeColumnsWithinMatrix(int[][] myMatrix, int column1, int column2) {
         int temp;
         for (int i = 0; i < myMatrix.length; i++) {
             for (int j = 0; j < myMatrix[i].length; j++) {
@@ -29,7 +36,22 @@ public class ArraysOfArraysProg8 {
                 }
             }
         }
-        formatPrintIntMatrix(myMatrixHeight, myMatrixLength, myMatrix);
     }
+
+    private static int getColumnWithinMatrix (Scanner scanner, int myMatrixLength)  {
+        int column;
+        do {
+            System.out.println("It must not be less than 1 and more than " + myMatrixLength);
+            while (!scanner.hasNextInt()) {
+                System.out.println("Incorrect input! Enter natural number within the matrix length!");
+                scanner.next();
+            }
+            column = scanner.nextInt();
+        }
+        while (column <= 0 || column > myMatrixLength);
+            System.out.println("Thank you! Got " + column);
+            return column;
+    }
+
 }
 

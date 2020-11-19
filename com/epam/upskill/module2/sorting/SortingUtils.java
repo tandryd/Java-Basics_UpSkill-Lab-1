@@ -10,7 +10,7 @@ class SortingUtils {
                 if (myArrayLength < 0) {
                     throw new IllegalArgumentException();
                 }
-            } catch (NegativeArraySizeException | NumberFormatException e) {
+            } catch (IllegalArgumentException e) {
                 System.out.println("Incorrect data. Please enter a natural number ");
                 continue;
             }
@@ -24,7 +24,14 @@ class SortingUtils {
         int [] myArrayInt = new int[arrayLength];
         System.out.println("Insert array elements:");
         for (int i = 0; i < myArrayInt.length; i++) {
-            myArrayInt [i] = scanner.nextInt();
+            if (scanner.hasNextInt()) {
+                myArrayInt[i] = scanner.nextInt();
+            }
+                else {
+                    System.out.println("Incorrect input. Please, enter a number");
+                    i--;
+                    scanner.next();
+                }
         }
         return myArrayInt;
     }

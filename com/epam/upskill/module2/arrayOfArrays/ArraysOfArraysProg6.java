@@ -7,7 +7,7 @@ public class ArraysOfArraysProg6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the height of the matrix: ");
-        int myMatrixHeight = getMatrixHeight(scanner);
+        int myMatrixHeight = getMatrixHeightEven(scanner);
              int[][] myMatrix = new int[myMatrixHeight][myMatrixHeight];
              int temp = myMatrixHeight;
              int temp2 = 0;

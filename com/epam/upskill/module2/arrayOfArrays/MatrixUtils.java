@@ -36,12 +36,34 @@ public class MatrixUtils {
         return myMatrixHeight;
     }
 
+    static int getMatrixHeightEven(Scanner scanner) {
+        int myMatrixHeight;
+        while (true) {
+            try {
+                myMatrixHeight = Integer.parseInt(scanner.nextLine());
+                if (myMatrixHeight < 0 || myMatrixHeight%2!=0) {
+                    throw new IllegalArgumentException();
+                }
+            } catch (IllegalArgumentException e) {
+                System.out.print("Incorrect data. Please enter a natural even number: ");
+                continue;
+            }
+            break;
+        }
+        return myMatrixHeight;
+    }
+
     static void getMatrixFromKeyboard(Scanner scanner, int myMatrixHeight, int myMatrixLength, int[][] myMatrix) {
         for (int i = 0; i < myMatrixHeight; i++) {
             System.out.println((i + 1) + "-th string of matrix: ");
             for (int j = 0; j < myMatrixLength; j++) {
                 if (scanner.hasNextInt()){
                 myMatrix[i][j] = scanner.nextInt();
+                }
+                else {
+                    System.out.println("Incorrect input. Please, enter a number");
+                    j--;
+                    scanner.next();
                 }
             }
         }
