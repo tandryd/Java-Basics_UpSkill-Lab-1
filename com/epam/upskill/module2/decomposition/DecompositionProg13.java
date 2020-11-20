@@ -12,7 +12,7 @@ public class DecompositionProg13 {
     private static void printTwinNumber(int n) {
         System.out.println("Twin numbers on a given segment:");
         for (int i = n; i <= 2 * n - 2; i++) {
-            if (greatestCommonDivisor(i, i + 2) == 1) {
+            if (calculateGreatestCommonDivisor(i, i + 2) == 1) {
                 System.out.println(i + " - " + (i + 2));
             }
         }

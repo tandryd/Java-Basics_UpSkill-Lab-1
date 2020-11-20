@@ -7,14 +7,14 @@ import static com.epam.upskill.module2.decomposition.DecompositionUtils.*;
 public class DecompositionProg6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter numbers: ");
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
-        int c = scanner.nextInt();
+        int a = getNaturalFromKeyboard(scanner);
+        int b = getNaturalFromKeyboard(scanner);
+        int c = getNaturalFromKeyboard(scanner);
         findCoprimeNumbers(a, b, c);
+        scanner.close();
     }
     private static void findCoprimeNumbers(int a, int b, int c) {
-        if (greatestCommonDivisor(a, b) ==1 && greatestCommonDivisor(a, c) ==1 && greatestCommonDivisor(b, c) ==1 ) {
+        if (calculateGreatestCommonDivisor(a, b) ==1 && calculateGreatestCommonDivisor(a, c) ==1 && calculateGreatestCommonDivisor(b, c) ==1 ) {
             System.out.println("These are coprime numbers");
         }
         else

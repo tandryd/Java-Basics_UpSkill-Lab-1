@@ -9,7 +9,7 @@ public class DecompositionProg2 {
         System.out.println("Insert array elements:");
         fillArrayWithNaturalNumbers(scanner, myArray);
         System.out.println(Arrays.toString(myArray));
-        System.out.println("Greatest common divisor: " + getGcdFromArray(myArray));
+        System.out.println("Greatest common divisor: " + getGreatestCommonDivisorFromArray(myArray));
         scanner.close();
     }
 
@@ -31,15 +31,15 @@ public class DecompositionProg2 {
         }
     }
 
-    private static int getGcdFromArray(int[] myArray) {
+    private static int getGreatestCommonDivisorFromArray(int[] myArray) {
         for (int i = 0; i < myArray.length-1 ; i++) {
-            int gcd = greatestCommonDivisor (myArray[i], myArray[i+1]);
+            int gcd = calculateGreatestCommonDivisor(myArray[i], myArray[i+1]);
                 myArray[i+1] = gcd;
         }
         return myArray[myArray.length-1];
     }
 
-    private static int greatestCommonDivisor ( int a, int b){
+    private static int calculateGreatestCommonDivisor(int a, int b){
             if (a <= 0 || b <= 0) throw new UnsupportedOperationException("Incorrect input");
             while (a != 0 && b != 0) {
                 if (a > b) {

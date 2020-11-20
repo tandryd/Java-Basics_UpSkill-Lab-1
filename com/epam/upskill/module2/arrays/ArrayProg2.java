@@ -32,6 +32,7 @@ public class ArrayProg2 {
                 System.out.println(Arrays.toString(myArray));
                 System.out.println("Number of replacement = " + replacementsNumber);
             }
+            scanner.close();
             break;
         }
     }
