@@ -3,15 +3,18 @@
 package com.epam.upskill.module2.decomposition;
 import java.util.Arrays;
 import java.util.Scanner;
+import static com.epam.upskill.module2.decomposition.DecompositionUtils.*;
 public class DecompositionProg12 {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter K:");
-        int k = in.nextInt();
+        int k = getIntFromKeyboard(scanner);
         System.out.println("Enter N:");
-        int n = in.nextInt();
+        int n = getIntFromKeyboard(scanner);
         int[] array = getArrayOfNumbers(k, n);
         System.out.println(Arrays.toString(array));
+        scanner.close();
+
     }
     private static int[] getArrayOfNumbers(int k, int n) {
         int[] arrOfNum = new int[n];

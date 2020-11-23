@@ -2,6 +2,7 @@
 Пояснение. Составить метод(методы) для вычисления суммы трех последовательно расположенных элементов массива с номерами от k до m.*/
 package com.epam.upskill.module2.decomposition;
 import java.util.Scanner;
+import static com.epam.upskill.module2.decomposition.DecompositionUtils.*;
 public class DecompositionProg8 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -9,8 +10,9 @@ public class DecompositionProg8 {
         System.out.print("Enter value of start of section: ");
         int startOfSectionK = scanner.nextInt();
         System.out.print("Enter value of end of section: ");
-        int endOfSectionM = scanner.nextInt();
+        int endOfSectionM = getIntFromKeyboard(scanner);
         getSumOfThreeElements(startOfSectionK, endOfSectionM, myArray);
+        scanner.close();
     }
     private static void getSumOfThreeElements(int startOfSectionK, int endOfSectionM, int[] myArray) {
         int count = 0;

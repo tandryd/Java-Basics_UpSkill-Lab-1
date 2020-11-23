@@ -9,22 +9,28 @@ public class DecompositionProg4 {
         System.out.print("Enter the number of points. ");
         int height = getNaturalFromKeyboard(scanner);
         int[][] coordinates = new int[height][2];
-            System.out.println("Enter coordinates: ");
-            getCoordinatesFromKeyboard(scanner, coordinates);
-            printCoordinates(coordinates);
-            int count = 0;
-            double maxDistance = 0;
-            for (int i = 0; i < coordinates.length - 1; i++) {
-                for (int j = i + 1; j <= coordinates.length - 1; j++) {
-                    double distanceBetweenPoints = findDistanceBetweenPoints(coordinates[i][0], coordinates[i][1], coordinates[j][0], coordinates[j][1]);
-                    if (maxDistance < distanceBetweenPoints) {
-                        maxDistance = distanceBetweenPoints;
-                    }
-                    count++;
-                    System.out.println("distance between " +  count +"-th pair of points = " + distanceBetweenPoints);
-                }
-            }
+        System.out.println("Enter coordinates: ");
+        getCoordinatesFromKeyboard(scanner, coordinates);
+        printCoordinates(coordinates);
+        double maxDistance = getMaxDistance(coordinates);
         System.out.println("Max distance: " + maxDistance);
+        scanner.close();
+    }
+
+    private static double getMaxDistance(int[][] coordinates) {
+        int count = 0;
+        double maxDistance = 0;
+        for (int i = 0; i < coordinates.length - 1; i++) {
+            for (int j = i + 1; j <= coordinates.length - 1; j++) {
+                double distanceBetweenPoints = findDistanceBetweenPoints(coordinates[i][0], coordinates[i][1], coordinates[j][0], coordinates[j][1]);
+                if (maxDistance < distanceBetweenPoints) {
+                    maxDistance = distanceBetweenPoints;
+                }
+                count++;
+                System.out.println("distance between " +  count +"-th pair of points = " + distanceBetweenPoints);
+            }
+        }
+        return maxDistance;
     }
 
     private static int getIntFromKeyboard(Scanner scanner) {

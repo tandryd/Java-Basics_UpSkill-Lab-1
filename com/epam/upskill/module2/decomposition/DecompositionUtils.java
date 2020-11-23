@@ -25,6 +25,17 @@ public class DecompositionUtils {
         return number;
     }
 
+    static double getDoubleFromKeyboard(Scanner scanner) {
+        double number;
+        while (!scanner.hasNextDouble()) {
+            System.out.println("Incorrect input! Please enter a number!");
+            scanner.next();
+        }
+        number = scanner.nextDouble();
+        System.out.println("Thank you! Got " + number);
+        return number;
+    }
+
     static int getNaturalFromKeyboard(Scanner scanner) {
         int natural;
         while (true) {
