@@ -9,7 +9,7 @@ public class ArraysOfArraysProg11 {
 
         int [][] myMatrix = new int [10][20];
         randomMyMatrix(myMatrix);
-        superPrintIntMatrix(10, 20, myMatrix);
+        formatPrintIntMatrix(10, 20, myMatrix);
         System.out.print("the matrix's row numbers we're looking for: ");
         for (int i = 0; i < myMatrix.length; i++) {
             int count = 0;

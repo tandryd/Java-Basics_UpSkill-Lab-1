@@ -26,7 +26,10 @@ class ArrayUtils {
         int[] myArrayNatural = new int [arrayLength];
         int i = 0;
         while (i < myArrayNatural.length) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> cc005e0755c7068442527919e158e99222b91324
             if (scanner.hasNextInt()) {
                 int value = scanner.nextInt();
                 if (value>0) {
@@ -57,8 +60,20 @@ class ArrayUtils {
         Scanner scanner = new Scanner(System.in);
         double [] myArrayDouble = new double[arrayLength];
         System.out.println("Insert array elements:");
+<<<<<<< HEAD
         for (int i = 0; i < myArrayDouble.length; i++) {
             myArrayDouble [i] = scanner.nextDouble();
+=======
+        int i = 0;
+        while (i < myArrayDouble.length) {
+            if (scanner.hasNextDouble()) {
+                myArrayDouble [i] = scanner.nextInt();
+                i++;
+            } else {
+                System.out.println("It's not a Double. Try again");
+                scanner.next();
+            }
+>>>>>>> cc005e0755c7068442527919e158e99222b91324
         }
         return myArrayDouble;
     }

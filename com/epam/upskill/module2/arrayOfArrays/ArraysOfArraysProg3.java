@@ -6,29 +6,23 @@ import static com.epam.upskill.module2.arrayOfArrays.MatrixUtils.*;
 public class ArraysOfArraysProg3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the height of the matrix: ");
         int myMatrixHeight = getMatrixHeight(scanner);
-        int myMatrixLength = getMatrixLength(scanner);
+        System.out.print("Enter the Length of the matrix: ");
+        int myMatrixLength = getMatrixHeight(scanner);
         int[][] myMatrix = new int[myMatrixHeight][myMatrixLength];
         getRandomMatrix(myMatrix);
         printIntMatrix(myMatrixHeight, myMatrixLength, myMatrix);
         int rowK = 3;
         int columnP = 3;
         System.out.println(rowK + "-th string of matrix:");
-        for (int i = 0; i < myMatrix.length; i++) {
-            for (int j = 0; j < myMatrix[i].length; j++) {
-                if (i == rowK - 1) {
-                    System.out.print(" " + myMatrix[i][j] + " ");
-                }
-            }
+        for (int i = 0; i < myMatrixLength; i++) {
+            System.out.print(" " + myMatrix[rowK-1][i] + " ");
         }
         System.out.println();
         System.out.println(columnP + "-th column of matrix:");
-        for (int[] matrix : myMatrix) {
-            for (int j = 0; j < matrix.length; j++) {
-                if (j == columnP - 1) {
-                    System.out.println(matrix[j] + "");
-                }
-            }
+        for (int j = 0; j < myMatrix.length; j++) {
+                System.out.println(myMatrix[j][columnP-1] + "");
         }
     }
 }

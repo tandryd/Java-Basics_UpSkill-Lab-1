@@ -32,6 +32,10 @@ public class ArrayProg2 {
                 System.out.println(Arrays.toString(myArray));
                 System.out.println("Number of replacement = " + replacementsNumber);
             }
+<<<<<<< HEAD
+=======
+            scanner.close();
+>>>>>>> cc005e0755c7068442527919e158e99222b91324
             break;
         }
     }

@@ -6,11 +6,13 @@ import static com.epam.upskill.module2.arrayOfArrays.MatrixUtils.*;
 public class ArraysOfArraysProg15 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the Height of the matrix: ");
         int myMatrixHeight = getMatrixHeight(scanner);
-        int myMatrixLength = getMatrixLength(scanner);
+        System.out.print("Enter the Length of the matrix: ");
+        int myMatrixLength = getMatrixHeight(scanner);
         int [][] myMatrix = new int[myMatrixHeight][myMatrixLength];
         getRandomMatrix(myMatrix);
-        superPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
+        formatPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
         int max = findMaxInMatrix(myMatrix);
         System.out.println();
         for (int i = 0; i < myMatrix.length; i++) {
@@ -21,6 +23,6 @@ public class ArraysOfArraysProg15 {
             }
         }
         System.out.println("Max element of matrix: " + max);
-        superPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
+        formatPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
     }
 }

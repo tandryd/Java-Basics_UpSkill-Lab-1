@@ -6,7 +6,8 @@ import static com.epam.upskill.module2.arrayOfArrays.MatrixUtils.*;
 public class ArraysOfArraysProg4 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int myMatrixHeight = getMatrixHeight(scanner);
+        int myMatrixHeight = getMatrixHeightOdd(scanner);
+        System.out.print("Enter the height of the matrix (a natural odd number): ");
         int[][] myMatrix = new int[myMatrixHeight][myMatrixHeight];
         int temp1 = 1;
         int temp2 = myMatrixHeight;
@@ -21,7 +22,7 @@ public class ArraysOfArraysProg4 {
             temp1 =1;
             temp2 = myMatrixHeight;
         }
-        MatrixUtils.superPrintIntMatrix(myMatrixHeight,myMatrixHeight,myMatrix);
+        MatrixUtils.formatPrintIntMatrix(myMatrixHeight,myMatrixHeight,myMatrix);
     }
 }
 

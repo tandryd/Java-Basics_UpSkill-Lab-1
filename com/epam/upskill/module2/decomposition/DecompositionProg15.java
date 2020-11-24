@@ -2,9 +2,12 @@
  Для решения задачи использовать декомпозициюю.*/
 package com.epam.upskill.module2.decomposition;
 import java.lang.*;
+import java.util.Scanner;
+
 public class DecompositionProg15 {
     public static void main(String[] args) {
-        int n = 5;
+        Scanner scanner = new Scanner(System.in);
+        int n = getNaturalNumber(scanner);
         int startNum = (int) Math.pow(10, n - 1);
         int endNum = (int) Math.pow(10, n) - 1;
         for (int i = startNum; i <= endNum; i++) {
@@ -13,7 +16,24 @@ public class DecompositionProg15 {
                 System.out.print(i + " ");
             }
         }
+        scanner.close();
     }
+
+     static int getNaturalNumber (Scanner scanner)  {
+        int natural;
+        do {
+            System.out.println("Enter a natural number from 1 to 9");
+            while (!scanner.hasNextInt()) {
+                System.out.println("Incorrect input! Enter natural number from 1 to 9!");
+                scanner.next();
+            }
+            natural = scanner.nextInt();
+        }
+        while (natural <= 0 || natural>=10);
+        System.out.println("Thank you! Got " + natural);
+        return natural;
+    }
+    
     public static int[] getArrayOfDigits(int number, int n) {
         int[] tempArray = new int[n];
         int tempNum;
@@ -24,6 +44,7 @@ public class DecompositionProg15 {
         }
         return tempArray;
     }
+
     private static boolean checksArrayOfDigits(int[] arr) {
         int count = 0;
         for (int i = 0; i < arr.length - 1; i++) {

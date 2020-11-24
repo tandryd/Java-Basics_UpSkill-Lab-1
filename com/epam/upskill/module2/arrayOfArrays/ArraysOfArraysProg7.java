@@ -8,8 +8,10 @@ import java.util.Scanner;
 public class ArraysOfArraysProg7 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the height of the matrix: ");
         int myMatrixHeight = getMatrixHeight(scanner);
-        int myMatrixLength = getMatrixLength(scanner);
+        System.out.print("Enter the length of the matrix: ");
+        int myMatrixLength = getMatrixHeight(scanner);
         double [][] myMatrix = new double[myMatrixHeight][myMatrixLength];
         int count = 0;
         for (int i = 0; i < myMatrix.length; i++) {

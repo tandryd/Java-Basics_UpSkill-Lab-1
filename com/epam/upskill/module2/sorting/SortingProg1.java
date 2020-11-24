@@ -5,18 +5,24 @@ package com.epam.upskill.module2.sorting;
 import java.util.Arrays;
 public class SortingProg1 {
     public static void main(String[] args) {
-                int[] firstArray = new int[]{1, 2, 3, 4, 5, 6};
+        int[] firstArray = new int[]{1, 2, 3, 4, 5, 6};
         int[] secondArray = new int[]{7, 8, 9, 0};
-        int k = 2;
+        int k = 5;
         int[] combinedArray = new int[firstArray.length + secondArray.length];
-        System.arraycopy(firstArray, 0, combinedArray, 0, firstArray.length);
-        System.arraycopy(secondArray, 0, combinedArray, firstArray.length, secondArray.length);
-        int temp;
-        for (int i = 0; i < secondArray.length; i++) {
-            int temp1 = i + k;
-            int temp2 = combinedArray[temp1];
-            combinedArray[temp1] = combinedArray[temp1 + secondArray.length];
-            combinedArray[temp1 + secondArray.length] = temp2;
+        int temp = 0;
+        for (int i = 0; i < firstArray.length; i++) {
+            if (i == k) {
+                for (int j = 0; j< secondArray.length; j++) {
+                    combinedArray[i+j] = secondArray[j];
+                    temp++;
+                }
+                combinedArray[temp] = firstArray[i];
+                temp++;
+            }
+            else {
+                combinedArray[temp] = firstArray[i];
+                temp++;
+            }
         }
         System.out.print(Arrays.toString(combinedArray));
     }

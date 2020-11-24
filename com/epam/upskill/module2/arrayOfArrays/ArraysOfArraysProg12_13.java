@@ -3,30 +3,49 @@
 13.Отсотрировать стобцы матрицы по возрастанию и убыванию значений эементов.
  */
 package com.epam.upskill.module2.arrayOfArrays;
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 import static com.epam.upskill.module2.arrayOfArrays.MatrixUtils.*;
 public class ArraysOfArraysProg12_13 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the height of the matrix: ");
         int myMatrixHeight = getMatrixHeight(scanner);
-        int myMatrixLength = getMatrixLength(scanner);
-        int[][] myMatrix = new int[myMatrixHeight][myMatrixLength];
-        getRandomMatrix(myMatrix);
-        superPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
+        System.out.print("Enter the Length of the matrix: ");
+        int myMatrixLength = getMatrixHeight(scanner);
+
+        final int[][] myMatrix = getRandomMatrix(myMatrixHeight, myMatrixLength);
+        formatPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
+
         System.out.println("sort rows up: ");
-        sortRowsUp(myMatrix);
-        superPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
+        int[][] rowsUpMatrix = sortRowsUp(cloneMatrix(myMatrix));
+        formatPrintIntMatrix(rowsUpMatrix.length, rowsUpMatrix[0].length, rowsUpMatrix);
+
         System.out.println("sort rows down: ");
-        sortRowsDown(myMatrix);
-        superPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
+        int[][] rowsDownMatrix = sortRowsDown(cloneMatrix(myMatrix));
+        formatPrintIntMatrix(rowsDownMatrix.length, rowsDownMatrix[0].length, rowsDownMatrix);
+
         System.out.println("sort columns up: ");
-        sortColumnsUp(myMatrix);
-        superPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
+        int [][] ColumnsUpMatrix = sortColumnsUp(cloneMatrix(myMatrix));
+        formatPrintIntMatrix(ColumnsUpMatrix.length, ColumnsUpMatrix[0].length, ColumnsUpMatrix);
+
         System.out.println("sort columns down: ");
-        sortColumnsDown(myMatrix);
-        superPrintIntMatrix(myMatrix.length, myMatrix[0].length, myMatrix);
+        int [][] ColumnsDownMatrix = sortColumnsDown(cloneMatrix(myMatrix));
+        formatPrintIntMatrix(ColumnsDownMatrix.length, ColumnsDownMatrix[0].length, ColumnsDownMatrix);
     }
-    private static void sortRowsUp(int[][] myMatrix) {
+
+    private static int [][] cloneMatrix (int [][] myMatrix){
+        int [][] newMatrix = new int[myMatrix.length][myMatrix[0].length];
+        for (int i = 0; i < myMatrix.length; i++) {
+            for (int j = 0; j < myMatrix[0].length; j++) {
+                newMatrix [i][j] = myMatrix [i][j];
+            }
+        }
+        return newMatrix;
+    }
+
+    private static int[][] sortRowsUp(int[][] myMatrix) {
         boolean isSorted = false;
         int temp;
         while (!isSorted) {
@@ -42,8 +61,9 @@ public class ArraysOfArraysProg12_13 {
                 }
             }
         }
+        return myMatrix;
     }
-    private static void sortRowsDown(int[][] myMatrix) {
+    private static int[][] sortRowsDown(int[][] myMatrix) {
         boolean isSorted = false;
         int temp;
         while (!isSorted) {
@@ -59,8 +79,9 @@ public class ArraysOfArraysProg12_13 {
                 }
             }
         }
+        return myMatrix;
     }
-    private static void sortColumnsUp(int[][] myMatrix) {
+    private static int[][] sortColumnsUp(int[][] myMatrix) {
         boolean isSorted = false;
         int temp;
         while (!isSorted) {
@@ -76,8 +97,9 @@ public class ArraysOfArraysProg12_13 {
                 }
             }
         }
+        return myMatrix;
     }
-    private static void sortColumnsDown(int[][] myMatrix) {
+    private static int[][] sortColumnsDown(int[][] myMatrix) {
         boolean isSorted = false;
         int temp;
         while (!isSorted) {
@@ -93,5 +115,17 @@ public class ArraysOfArraysProg12_13 {
                 }
             }
         }
+        return myMatrix;
+    }
+
+    static int [][] getRandomMatrix(int myMatrixLength, int myMatrixHeight) {
+        Random random = new Random();
+        int[][] myMatrix = new int[myMatrixHeight][myMatrixLength];
+        for (int i = 0; i < myMatrixHeight; i++) {
+            for (int j = 0; j < myMatrixLength; j++) {
+                myMatrix[i][j] = random.nextInt(10);
+            }
+        }
+        return myMatrix;
     }
 }

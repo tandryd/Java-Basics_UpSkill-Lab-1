@@ -6,25 +6,18 @@ import static com.epam.upskill.module2.decomposition.DecompositionUtils.*;
 import java.util.Scanner;
 public class DecompositionProg13 {
     public static void main(String[] args) {
-        int n = getIntegerFromConsole();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the value of the segment start: ");
+        int n = getIntFromKeyboard(scanner);
         printTwinNumber(n);
+        scanner.close();
     }
     private static void printTwinNumber(int n) {
         System.out.println("Twin numbers on a given segment:");
         for (int i = n; i <= 2 * n - 2; i++) {
-            if (greatestCommonDivisor(i, i + 2) == 1) {
+            if (calculateGreatestCommonDivisor(i, i + 2) == 1) {
                 System.out.println(i + " - " + (i + 2));
             }
         }
-    }
-    private static int getIntegerFromConsole() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the value of the segment start: ");
-        int n = scanner.nextInt();
-        while (n <= 2) {
-            System.out.println("Enter a positive integer greater than 2!");
-            n = scanner.nextInt();
-        }
-        return n;
     }
 }
