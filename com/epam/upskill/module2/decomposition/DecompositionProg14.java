@@ -5,13 +5,6 @@ import static com.epam.upskill.module2.decomposition.DecompositionUtils.*;
 import java.util.Scanner;
 public class DecompositionProg14 {
     public static void main(String[] args) {
-<<<<<<< HEAD
-        int endOfSegment = getIntegerFromConsole();
-        printArmstrongNambersOnSement(endOfSegment);
-    }
-    private static int getIntegerFromConsole() {
-=======
->>>>>>> cc005e0755c7068442527919e158e99222b91324
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the value of the segment end (k): ");
         int endOfSegment =getIntFromKeyboard(scanner);
