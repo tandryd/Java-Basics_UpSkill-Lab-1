@@ -11,24 +11,14 @@ public class StringAsArrayProg4 {
     }
 
     private static boolean isDigit (char ch) {
-        boolean isDigit = false;
-        char [] digits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
-        for (char element : digits) {
-            if (ch == element) {
-                isDigit = true;
-            }
-        }
-        return isDigit;
+        return (ch >= '0' && ch <= '9');
     }
 
     private static int countNumbers (String line) {
         int counter = 0;
         for (int i = 0; i < line.length(); i++) {
-            if (isDigit(line.charAt(i))) {
-                if (i == line.length() - 1 || !isDigit(line.charAt(i + 1))) {
+            if (isDigit(line.charAt(i)) && !isDigit(line.charAt(i + 1))) {
                     counter++;
-                }
-
             }
         }
         return counter;

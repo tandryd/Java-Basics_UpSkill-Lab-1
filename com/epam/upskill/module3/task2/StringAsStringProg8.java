@@ -3,24 +3,14 @@
  Случай, когда самых длинных слов может быть несколько, не обрабатывать.
  */
 package com.epam.upskill.module3.task2;
-
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import static com.epam.upskill.module3.task2.StringUtils.*;
 
 public class StringAsStringProg8 {
 
     public static void main(String[] args) throws IOException {
         String text = getStringFromKeyboard();
         System.out.println("The longest word - " + findLongestWord(text));
-    }
-
-    public static String getStringFromKeyboard () throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Type some text from keyboard:");
-        String text = reader.readLine();
-        reader.close();
-        return text;
     }
 
     private static String findLongestWord (String text) {

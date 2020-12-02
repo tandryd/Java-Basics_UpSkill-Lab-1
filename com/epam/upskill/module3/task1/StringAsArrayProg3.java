@@ -10,16 +10,15 @@ public class StringAsArrayProg3 {
         System.out.println(string);
         System.out.println("Number of digits in a string: " + countDigits(string));
     }
+
     private static int countDigits(String string) {
         int count = 0;
-        char [] digits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
         for (int i = 0; i < string.length(); i++) {
-            for (char element : digits) {
-                if (string.charAt(i) == element) {
-                    count++;
-                }
+            if (string.charAt(i) >= '0' && string.charAt(i) <= '9') {
+                count++;
             }
         }
         return count;
+
     }
 }
