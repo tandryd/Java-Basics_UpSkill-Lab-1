@@ -5,20 +5,25 @@
 package com.epam.upskill.module5.task1;
 
 public class TextFile extends File{
-    private final Text content;
+    private String content;
 
     TextFile(Directory directory, String fileName) {
         super(directory, fileName);
-        content = new Text("");
-        super.getDirectory().addFile(this);
+        content ="";
+        directory.addFile(this);
     }
 
-    public void addText(String line) {
-        content.addText(line);
+    public void addContent(String text) {
+        StringBuilder stringBuilder = new StringBuilder(this.content);
+        this.content = stringBuilder.append(text).toString();
+    }
+
+    public String getContent() {
+        return content;
     }
 
     public void printContent() {
-        System.out.println(content.getText());
+        System.out.println(getContent());
     }
 
     @Override

@@ -4,9 +4,11 @@
  */
 package com.epam.upskill.module5.task1;
 import java.util.ArrayList;
+import java.util.List;
+
 public class Directory {
     private String directoryName;
-    private ArrayList<TextFile> files;
+    private final List<File> files;
 
     public Directory(String directoryName) {
         this.directoryName = directoryName;
@@ -21,9 +23,10 @@ public class Directory {
         this.directoryName = directoryName;
     }
 
-    public ArrayList<TextFile> getFiles() {
+        public List<File> getFiles() {
         return files;
     }
+
 
     public void addFile(TextFile file) {
         this.files.add(file);
