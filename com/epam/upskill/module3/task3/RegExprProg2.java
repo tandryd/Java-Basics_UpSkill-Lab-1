@@ -37,11 +37,11 @@ public class RegExprProg2 {
                 "        <body/>\n" +
                 "    </note>\n" +
                 " </notes> \n";
-        String xmlAnalysis = xmlAnalyzer(xml);
+        String xmlAnalysis = analyzeXml(xml);
         System.out.println(xmlAnalysis);
     }
 
-    private static String xmlAnalyzer(String xml) {
+    private static String analyzeXml(String xml) {
         StringBuilder strBuilder = new StringBuilder();
         Pattern pOpen = Pattern.compile("<[.[^/]]+>");
         Pattern pClose = Pattern.compile("</.+>");
