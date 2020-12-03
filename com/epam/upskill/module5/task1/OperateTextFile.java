@@ -39,7 +39,7 @@ public class OperateTextFile {
         }
 
         System.out.println("\nTest: deleting a text file and print files of current directory.");
-        directory.removeFile("Spring Boot in Action");
+        directory.removeFile("What is OOP");
         for (TextFile file : directory.getFiles()) {
             System.out.println(file);
         }
