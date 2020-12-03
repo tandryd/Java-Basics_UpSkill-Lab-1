@@ -4,7 +4,6 @@
  */
 package com.epam.upskill.module5.task1;
 import java.util.ArrayList;
-
 public class Directory {
     private String directoryName;
     private ArrayList<TextFile> files;

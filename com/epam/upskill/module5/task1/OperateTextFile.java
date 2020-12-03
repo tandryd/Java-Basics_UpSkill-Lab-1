@@ -3,7 +3,6 @@
 Методы: создать, переименовать, вывести на консоль содержимое, дополнить,удалить.
  */
 package com.epam.upskill.module5.task1;
-
 public class OperateTextFile {
     public static void main(String[] args) {
         Directory directory = new Directory("D://Text Files");

@@ -5,7 +5,6 @@
 package com.epam.upskill.module5.task1;
 
 public class TextFile extends File{
-    
     private final Text content;
 
     TextFile(Directory directory, String fileName) {

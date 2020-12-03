@@ -4,6 +4,7 @@
  */
 package com.epam.upskill.module5.task1;
 public class Text {
+
     private String text;
 
     Text(String text) {

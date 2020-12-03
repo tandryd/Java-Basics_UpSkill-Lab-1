@@ -3,7 +3,6 @@
 Методы: создать, переименовать, вывести на консоль содержимое, дополнить,удалить.
  */
 package com.epam.upskill.module5.task1;
-
 public abstract class File {
     private Directory directory;
     private String fileName;
