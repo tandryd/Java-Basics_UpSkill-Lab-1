@@ -17,24 +17,24 @@ public class Payment {
         Collections.addAll(productList, products);
         order = new Order(productList);
         balance = order.getCost() * currency.getRate();
-        System.out.println(String.format("Check amount: %.2f %s. You want to pay in %ss. ",
-                order.getCost(), "dollars", currency.getName()));
-        System.out.println(String.format("You need to pay %.2f %ss.", balance, currency.getName()));
+        System.out.printf("Check amount: %.2f %s. You want to pay in %ss. %n",
+                order.getCost(), "dollars", currency.getName());
+        System.out.printf("You need to pay %.2f %ss.%n", balance, currency.getName());
     }
 
     public void pay(Currency currency, double deposit) {
         if(balance < deposit) {
-            System.out.print(String.format("You paid %.2f %ss. ", deposit, currency.getName()));
+            System.out.printf("You paid %.2f %ss. ", deposit, currency.getName());
             double change = deposit - balance;
-            System.out.println(String.format("Your change is %.2f %ss.", change, currency.getName()));
+            System.out.printf("Your change is %.2f %ss.%n", change, currency.getName());
 
         } else if(balance == deposit) {
-            System.out.print(String.format("You paid %.2f %ss. ", deposit, currency.getName()));
+            System.out.printf("You paid %.2f %ss. ", deposit, currency.getName());
             System.out.println("Thank you for paying without change.");
         } else {
-            System.out.print(String.format("You paid %.2f %ss. ", deposit, currency.getName()));
+            System.out.printf("You paid %.2f %ss. ", deposit, currency.getName());
             balance -= deposit;
-            System.out.println(String.format("There is not enough %.2f %ss to pay. ", balance, this.currency.getName()));
+            System.out.printf("There is not enough %.2f %ss to pay. %n", balance, this.currency.getName());
         }
     }
 
