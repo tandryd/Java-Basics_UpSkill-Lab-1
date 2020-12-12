@@ -1,0 +1,12 @@
+White rose - 5.50 - Rose
+Red rose - 5.50 - Rose
+Decorative rose - 2.99 - Rose
+White Chamomile - 3.60 - Chamomile
+Yellow Chamomile - 3.60 Chamomile
+Decorative Chamomile - 4.00 - Chamomile
+Yellow Lily - 4.10 - Lily
+Violet Lily - 4.10 - Lily
+White Lily - 4.10 - Lily
+Red Carnation - 2.50 - Carnation
+White Carnation - 2.50 - Carnation
+Decorative Carnation - 3.00 - Carnation
