@@ -28,22 +28,14 @@ public class DecimalCounter {
     }
 
     void increase() {
-        currentValue++;
-        if(currentValue == maxValue) {
-            System.out.println("the highest value is reached");
-        } else if (currentValue > maxValue) {
-            System.out.println("Trying to go outside the upper range");
-            currentValue--;
+        if (currentValue<maxValue) {
+            currentValue++;
         }
     }
 
     void reduce() {
-        currentValue--;
-        if(currentValue == maxValue) {
-            System.out.println("the lowest value is reached.");
-        } else if (currentValue < minValue) {
-            System.out.println("Trying to go outside the lower range");
-            currentValue++;
+        if (currentValue>minValue) {
+            currentValue--;
         }
     }
 

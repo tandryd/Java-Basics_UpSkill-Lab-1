@@ -10,10 +10,16 @@ package com.epam.upskill.module4.task1.tsk4;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Train {
     private final String destination;
     private final String trainNumber;
+
+    public String getTrainNumber() {
+        return trainNumber;
+    }
+
     private final Date departureTime;
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
 
@@ -23,7 +29,7 @@ public class Train {
         this.departureTime = departureTime;
     }
 
-    private static void sortTrainNumber(Train [] trains) {
+    private static void sortTrainNumber(Train[] trains) {
         Train temp;
         for (int i = 0; i < trains.length; i++) {
             for (int j = trains.length - 1; j > i; j--) {
@@ -36,7 +42,7 @@ public class Train {
         }
     }
 
-    private static String printTrainInformation(Train [] trains, String trainNumber) {
+    private static String printTrainInformation(Train[] trains, String trainNumber) {
         for (Train train : trains) {
             if (train.trainNumber.equalsIgnoreCase(trainNumber)) {
                 return "destination: " + train.destination +
@@ -46,7 +52,7 @@ public class Train {
         return null;
     }
 
-    private static void sortTrainDestination(Train [] trains) {
+    private static void sortTrainDestination(Train[] trains) {
         Train temp;
         for (int i = 0; i < trains.length; i++) {
             for (int j = trains.length - 1; j > i; j--) {
@@ -67,7 +73,7 @@ public class Train {
     }
 
     public static void main(String[] args) throws ParseException {
-        Train [] trains = new Train[5];
+        Train[] trains = new Train[5];
         trains[0] = new Train("Saint Petersburg", "018Б", dateFormat.parse("18:58"));
         trains[1] = new Train("Moscow", "185П", dateFormat.parse("11:48"));
         trains[2] = new Train("Riga", "021Л", dateFormat.parse("13:50"));
@@ -75,17 +81,33 @@ public class Train {
         trains[4] = new Train("Kiev", "094Б", dateFormat.parse("05:40"));
 
         sortTrainNumber(trains);
-        for (Train train: trains ) {
+        for (Train train : trains) {
             System.out.println(train.trainNumber);
         }
 
-        String request = "018Б";
-        System.out.printf("%nTrain #%s, ", request);
-        System.out.println(printTrainInformation(trains, request) + "\n");
-        sortTrainDestination(trains);
+        System.out.println("Enter number of train:");
+        boolean isFounded = false;
+        Scanner scanner = new Scanner(System.in);
+        while (!isFounded){
+            String request = scanner.nextLine();
+            for (Train train : trains) {
+                if (request.equals(train.getTrainNumber())) {
+                    System.out.printf("%nTrain #%s, ", request);
+                    System.out.println(printTrainInformation(trains, request) + "\n");
+                    isFounded = true;
+                }
+            }
+            if (!isFounded){
+            System.out.println("There is no such number of train. Try again:");
+            }
+        }
+        scanner.close();
 
+        sortTrainDestination(trains);
         for (Train train : trains) {
-            System.out.println(train.destination + " " + train.trainNumber + " - " + dateFormat.format(train.departureTime));
+            System.out.println(train.destination + " " + train.getTrainNumber() + " - " + dateFormat.format(train.departureTime));
         }
     }
+
 }
+

@@ -6,8 +6,8 @@
 package com.epam.upskill.module4.task1.tsk2;
 
 public class Test2 {
-    int a;
-    int b;
+    private int a;
+    private int b;
 
     public Test2 (int a, int b) {
         this.a = a;

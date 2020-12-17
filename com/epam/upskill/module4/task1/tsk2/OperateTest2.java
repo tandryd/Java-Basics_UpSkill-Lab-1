@@ -7,7 +7,7 @@ package com.epam.upskill.module4.task1.tsk2;
 
 public class OperateTest2 {
     public static void main(String[] args) {
-        Test2 one = new Test2(12, 4);
+        Test2 one = new Test2(12,4);
         Test2 two = new Test2();
 
         System.out.println("one A: " + one.getA());

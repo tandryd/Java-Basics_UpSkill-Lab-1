@@ -4,8 +4,8 @@
 package com.epam.upskill.module4.task1.tsk1;
 
 public class Test1 {
-    int a = 1;
-    int b = 2;
+    private int a = 1;
+    private int b = 2;
 
     public void printVar () {
         System.out.printf("a = %d, b = %d", a, b);
