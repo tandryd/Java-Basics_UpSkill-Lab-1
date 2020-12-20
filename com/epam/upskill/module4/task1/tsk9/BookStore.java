@@ -11,6 +11,7 @@ c) список книг, выпущенных после заданного г�
 package com.epam.upskill.module4.task1.tsk9;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BookStore {
     private String bookStoreName;
@@ -21,11 +22,11 @@ public class BookStore {
         this.bookList = bookList;
     }
 
-    void addBook(String title, String author, String publisher, int yearOfPublishing, int numberOfPages, float price, String bindingType) {
-        this.bookList.add(new Book(title, author, publisher, yearOfPublishing, numberOfPages, price, bindingType));
+    void addBookInStore(Book book) {
+        this.bookList.add(book);
     }
 
-    ArrayList<Book> getAuthorBook (String author){
+    List<Book> getAuthorBook (String author){
         ArrayList<Book> authorList = new ArrayList<>();
         for (Book book:this.bookList) {
             if (book.getAuthor().equalsIgnoreCase(author)){

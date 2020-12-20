@@ -40,8 +40,8 @@ public class CustomerBase {
         return list;
     }
 
-    void addCustomer (String lastName, String firstName, String patronymic, String address, BigInteger cardNumber, long bankAccountNumber){
-        this.base.add(new Customer(lastName, firstName, patronymic, address, cardNumber, bankAccountNumber));
+    void addCustomerInBase (Customer customer){
+        this.base.add(customer);
     }
 
     ArrayList<Customer> getBase() {

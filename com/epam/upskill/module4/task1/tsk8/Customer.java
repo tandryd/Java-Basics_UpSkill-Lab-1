@@ -46,13 +46,6 @@ public class Customer {
                 ", bankAccountNumber=" + bankAccountNumber;
     }
 
-//        @Override
-//    public String toString() {
-//        return String.format("id: %d, Last name: %s, First name: %s, Patronymic: %s, Address: %s, " +
-//                        "Credit card number: %s, Bank account number: %d",
-//                id, lastName, firstName, patronymic, address,
-//                cardNumber.toString(), bankAccountNumber);
-//    }
 
     public int getId() {
         return id;

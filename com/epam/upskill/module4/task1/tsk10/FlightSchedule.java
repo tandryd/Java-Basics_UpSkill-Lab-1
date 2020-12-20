@@ -13,10 +13,11 @@ package com.epam.upskill.module4.task1.tsk10;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class FlightSchedule {
     private String airportName;
-    private ArrayList<Airline> airlines;
+    private List<Airline> airlines;
 
     public FlightSchedule(String airportName, ArrayList<Airline> airlines) {
         this.airportName = airportName;
@@ -27,8 +28,8 @@ public class FlightSchedule {
         airlines.add(new Airline(destination, flightNumber, planeType, departureTime, dayOfWeek));
     }
 
-    ArrayList<Airline> airlinesToDestination(String destination) {
-        ArrayList<Airline> airlines = new ArrayList<>();
+    List<Airline> airlinesToDestination(String destination) {
+        List<Airline> airlines = new ArrayList<>();
         for (Airline airline : this.airlines) {
             if(airline.getDestination().equals(destination)) {
                 airlines.add(airline);
@@ -37,8 +38,8 @@ public class FlightSchedule {
         return airlines;
     }
 
-    ArrayList<Airline> flightDays (DayOfWeek dayOfWeek) {
-        ArrayList<Airline> airlines = new ArrayList<>();
+    List<Airline> flightDays (DayOfWeek dayOfWeek) {
+        List<Airline> airlines = new ArrayList<>();
         for (Airline airline : this.airlines) {
             for (DayOfWeek day : airline.getDayOfWeek()) {
                 if (day == dayOfWeek || day == DayOfWeek.EVERYDAY) {
@@ -50,8 +51,8 @@ public class FlightSchedule {
         return airlines;
     }
 
-    ArrayList<Airline> flightDays (DayOfWeek dayOfWeek, Date departureTime) {
-        ArrayList<Airline> airlines = new ArrayList<>();
+    List<Airline> flightDays (DayOfWeek dayOfWeek, Date departureTime) {
+        List<Airline> airlines = new ArrayList<>();
         for (Airline airline : this.airlines) {
             for (DayOfWeek day : airline.getDayOfWeek()) {
                 if (day == dayOfWeek || day == DayOfWeek.EVERYDAY) {
@@ -74,11 +75,11 @@ public class FlightSchedule {
         this.airportName = airportName;
     }
 
-    ArrayList<Airline> getAirlines() {
+    List<Airline> getAirlines() {
         return airlines;
     }
 
-    public void setAirlines(ArrayList<Airline> airlines) {
+    public void setAirlines(List<Airline> airlines) {
         this.airlines = airlines;
     }
 

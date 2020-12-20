@@ -12,7 +12,6 @@ c) список рейсов для заданного дня недели, вр
 package com.epam.upskill.module4.task1.tsk10;
 
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 
 public class Airline {

@@ -19,14 +19,18 @@ import java.util.Comparator;
 public class OperateCustomerBase {
     public static void main(String[] args) {
         CustomerBase vipClient = new CustomerBase("VIP clients", new ArrayList<>());
-        vipClient.addCustomer("Кazlou","Andrei", "Dmitrievich",
+        Customer kazlou = new Customer("Кazlou","Andrei", "Dmitrievich",
                 "Minsk", new BigInteger("1111111111111111"), 12345678);
-        vipClient.addCustomer("Bariska", "Vadim", "Antonavich",
+        vipClient.addCustomerInBase(kazlou);
+        Customer bariska = new Customer("Bariska", "Vadim", "Antonavich",
                 "Kiev", new BigInteger("2222222222222222"), 23456789 );
-        vipClient.addCustomer("Sergeyeu", "Yegor", "Vasilievich",
+        vipClient.addCustomerInBase(bariska);
+        Customer sergeyeu = new Customer("Sergeyeu", "Yegor", "Vasilievich",
                 "Tallinn", new BigInteger("3333333333333333"), 34567891);
-        vipClient.addCustomer("Javalec", "Kanstantsin", "Kanstantsinavich",
+        vipClient.addCustomerInBase(sergeyeu);
+        Customer javalec = new Customer("Javalec", "Kanstantsin", "Kanstantsinavich",
                 "Warsaw", new BigInteger("4444444444444444"), 45678912);
+        vipClient.addCustomerInBase(javalec);
         System.out.println("List of customers in alphabetical order: ");
         vipClient.sortName();
         for (int i = 0; i < vipClient.getBase().size(); i++) {

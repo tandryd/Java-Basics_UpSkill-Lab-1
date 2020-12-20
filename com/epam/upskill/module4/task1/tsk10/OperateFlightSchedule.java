@@ -14,6 +14,7 @@ package com.epam.upskill.module4.task1.tsk10;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class OperateFlightSchedule {
     public static void main(String[] args) throws ParseException {
@@ -42,22 +43,21 @@ public class OperateFlightSchedule {
                 Airline.ft.parse("14:50"), new DayOfWeek[]{DayOfWeek.MONDAY, DayOfWeek.WEDNESDAY,
                         DayOfWeek.FRIDAY, DayOfWeek.SUNDAY});
 
-
         System.out.println("The list of flights with destination Brussels (CRL):");
-        ArrayList<Airline> airlinesToBrussels = flightSchedule.airlinesToDestination("Brussels (CRL)");
+        List<Airline> airlinesToBrussels = flightSchedule.airlinesToDestination("Brussels (CRL)");
         for (Airline airline : airlinesToBrussels) {
             System.out.println(airline);
         }
 
         System.out.println("\nThe list of flights departing on Sunday:");
-        ArrayList<Airline> airlinesOnSunday = flightSchedule.flightDays(DayOfWeek.SUNDAY);
+        List<Airline> airlinesOnSunday = flightSchedule.flightDays(DayOfWeek.SUNDAY);
         for (Airline airline : airlinesOnSunday) {
             System.out.println(airline);
         }
 
         System.out.println("\nThe list of flights departing after 13:00 Tuesday:");
         Date time = Airline.ft.parse("13:00");
-        ArrayList<Airline> airlinesOnTuesday = flightSchedule.flightDays(DayOfWeek.MONDAY, time);
+        List<Airline> airlinesOnTuesday = flightSchedule.flightDays(DayOfWeek.MONDAY, time);
         for (Airline airline : airlinesOnTuesday) {
             System.out.println(airline);
         }
