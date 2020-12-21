@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class StringUtils {
-    protected static String getStringFromKeyboard () throws IOException {
+    public static String getStringFromKeyboard () throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Type some text from keyboard:");
         String text = reader.readLine();
