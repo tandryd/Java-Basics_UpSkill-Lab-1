@@ -38,7 +38,7 @@ public class CustomerAction {
                 "\n 1. Sweet gift;" +
                 "\n 2. Flower arrangement.");
         System.out.println("Enter option number");
-        int option = getIntOptionFromKeyboard();
+        int option = getIntOptionFromKeyboard(2);
         switch (option) {
             case 1:
                 presentDirector.setPresentBuilder(new CandyPresentBuilder());
@@ -58,7 +58,7 @@ public class CustomerAction {
                 WrapType.CARDBOARD_BOX.getPrice(), WrapType.METAL_BOX.getPrice(),
                 WrapType.FOIL_POUCHES.getPrice(), WrapType.PLASTIC_BAG.getPrice()));
         System.out.println("\nEnter packing option number:");
-        int option = getIntOptionFromKeyboard();
+        int option = getIntOptionFromKeyboard(4);
         Wrap wrap = null;
         switch (option) {
             case 1: wrap = new Wrap(WrapType.CARDBOARD_BOX);

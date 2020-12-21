@@ -33,12 +33,13 @@ public class CheckInput {
         }
     }
 
-    public static int getIntOptionFromKeyboard() {
-        Pattern pattern = Pattern.compile("[1-4]");
+    public static int getIntOptionFromKeyboard(int numberOfOptions) {
+        String regExp = "[1-" + numberOfOptions +"]";
+        Pattern pattern = Pattern.compile(regExp);
         scanner.useDelimiter("[\r\n]");
         while (!scanner.hasNext(pattern)) {
             scanner.nextLine();
-            System.out.println("Invalid input. Enter 1, 2, 3 or 4");
+            System.out.println("Invalid input. Enter natural number from 1 to " + numberOfOptions);
         }
         return scanner.nextInt();
     }

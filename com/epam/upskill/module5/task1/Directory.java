@@ -28,7 +28,7 @@ public class Directory {
     }
 
 
-    public void addFile(TextFile file) {
+    public void addFile(File file) {
         this.files.add(file);
     }
 

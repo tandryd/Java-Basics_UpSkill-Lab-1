@@ -1,9 +1,9 @@
 package com.epam.upskill.module5.task4.enity;
 
 public abstract class Treasure {
-    private String name;
-    private int value;
-    private String DescriptionOfTreasure;
+    protected String name;
+    protected int value;
+    protected String DescriptionOfTreasure;
 
     public String getName() {
         return name;

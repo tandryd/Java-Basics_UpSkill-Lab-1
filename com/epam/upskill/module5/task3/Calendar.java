@@ -17,11 +17,9 @@ public class Calendar {
     public Calendar(int year) {
         this.year = year;
         this.holidays = new ArrayList<>();
-
-        addWeekend(year);
     }
 
-    private void addWeekend(int year) {
+    public void addWeekend(int year) {
         LocalDate date = LocalDate.of(year, 1, 1);
         while (date.getDayOfWeek() != DayOfWeek.SATURDAY
                 && date.getDayOfWeek() != DayOfWeek.SUNDAY) {

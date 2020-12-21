@@ -11,13 +11,10 @@ import java.util.Scanner;
 
 public class TreasureAction {
 
-//    List<Treasure> treasures = new ArrayList<>();
-
     public void fillCaveWithTreasures(Cave cave) {
 
         try {
             FileReader fileReader = new FileReader("com/epam/upskill/module5/task4/data/treasures_list.txt");
-//            FileReader fileReader = new FileReader("C:/Documents/Java-Basics_UpSkill-Lab-1/com/epam/upskill/module5/task4/data/treasures_list.txt");
             Scanner scanner = new Scanner(fileReader);
             List<Treasure> treasures = cave.getTreasures();
             while (scanner.hasNextLine() &&  treasures.size()<100) {
