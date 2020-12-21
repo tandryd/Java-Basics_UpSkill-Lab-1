@@ -6,11 +6,12 @@ package com.epam.upskill.module4.task2.tsk2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Car {
     private String modelName;
     private Engine engine;
-    private ArrayList<Wheel> wheels;
+    private List<Wheel> wheels;
     private boolean isFuel;
 
     public Car (String modelName) {
@@ -30,24 +31,23 @@ public class Car {
         this.engine = engine;
     }
 
-    public ArrayList<Wheel> getWheels() {
+    public List<Wheel> getWheels() {
         return wheels;
     }
 
-    public void setWheels(Wheel w1, Wheel w2, Wheel w3, Wheel w4) {
-        this.wheels = new ArrayList<>(Arrays.asList(w1, w2, w3, w4));
+    public void setWheels(List<Wheel> wheels) {
+        this.wheels = wheels;
     }
 
     public String getModelName() {
         return modelName;
     }
 
-    void changeWheel() {
-        for(int i = 0; i < 4; i++) {
-            if (!wheels.get(i).isGood()) {
-                System.out.printf("Wheel number %d is changed.\n", i + 1);
-                int wheelDia = this.getWheels().get(i).getDiameter();
-                this.getWheels().set(i, new Wheel(wheelDia));
+    void changeWheel(List<Wheel> wheels) {
+        for (Wheel wheel: wheels) {
+            if (!wheel.isGood()) {
+                System.out.printf("Wheel number %d is changed.\n", wheels.indexOf(wheel) + 1);
+                wheel.setGoodWheel();
             }
         }
     }
@@ -71,12 +71,7 @@ public class Car {
                 wheelCounter++;
             }
         }
-        if (wheelCounter == 0) {
-            message = "- wheels are not installed. Please install 4 wheels.\n";
-        } else if (wheelCounter == 1 || wheelCounter == 2 || wheelCounter == 3) {
-            message = String.format("- only %d wheels installed. Please install %d more wheels\n", wheelCounter, 4 - wheelCounter);
-        }
-        System.out.print(message);
+        checkIfWheelsInstalled(wheelCounter, message);
         if (engine == null) {
             System.out.println("- engine not installed. Please install the engine.");
         } else {
@@ -85,9 +80,9 @@ public class Car {
 
         if (isEngine && wheelCounter == 4) {
             boolean ready = true;
-            for (int i = 0; i < 4; i++) {
-                if (!wheels.get(i).isGood()) {
-                    System.out.printf("- wheel number %d is broken. Please replace the wheel.%n", i + 1);
+            for (Wheel wheel: wheels) {
+                if (!wheel.isGood()) {
+                    System.out.printf("- wheel number %d is broken. Please replace the wheel.%n", wheels.indexOf(wheel) + 1);
                     ready = false;
                 }
             }
@@ -97,5 +92,14 @@ public class Car {
                 System.out.println("- the car goes on the road!");
             }
         }
+    }
+
+    private void checkIfWheelsInstalled(int wheelCounter, String message) {
+        if (wheelCounter == 0) {
+            message = "- wheels are not installed. Please install 4 wheels.\n";
+        } else if (wheelCounter == 1 || wheelCounter == 2 || wheelCounter == 3) {
+            message = String.format("- only %d wheels installed. Please install %d more wheels\n", wheelCounter, 4 - wheelCounter);
+        }
+        System.out.print(message);
     }
 }

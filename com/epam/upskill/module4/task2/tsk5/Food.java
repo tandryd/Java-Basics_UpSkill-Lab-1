@@ -6,7 +6,7 @@
 package com.epam.upskill.module4.task2.tsk5;
 
 public enum Food {
-    NOT_INCLUDET,
+    NOT_INCLUDED,
     BREAKFAST,
     ALL_INCLUSIVE;
 

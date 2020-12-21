@@ -28,11 +28,11 @@ public class Region {
     }
 
     int getRegionPopulation (){
-        int regionPopulaiton = 0;
+        int regionPopulation = 0;
         for (District district:this.regionDistricts) {
-        regionPopulaiton += district.getDistrictCenter().getCityPopulation();
+        regionPopulation += district.getDistrictCenter().getCityPopulation();
         }
-        return regionPopulaiton;
+        return regionPopulation;
     }
 
     void addDistrict (District district){

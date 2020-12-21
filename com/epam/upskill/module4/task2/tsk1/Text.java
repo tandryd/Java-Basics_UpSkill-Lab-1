@@ -5,47 +5,47 @@
 package com.epam.upskill.module4.task2.tsk1;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Text {
+    private List<Sentence> text;
+    private String header;
 
-    private Word heading;
-    private ArrayList<Sentence> content;
-
-    Text(Word heading) {
-        this.heading = heading;
-        this.content = new ArrayList<>();
+    public Text(String header) {
+        this.header = header;
+        this.text = new ArrayList<>();
     }
 
-    Text(Word heading, ArrayList<Sentence> content){
-        this.heading = heading;
-        this.content = content;
+    public List<Sentence> addSentence(Sentence sentence){
+        text.add(sentence);
+        return text;
+    }
+    public List<Sentence> deleteSentence(Sentence sentence){
+        text.remove(sentence);
+        return text;
     }
 
-    Text(Word heading, Sentence sentence){
-        this.heading = heading;
-        this.content = new ArrayList<>();
-        this.content.add(sentence);
+    public List<Sentence> getText() {
+        return text;
     }
 
-    void addSentence (Sentence sentence) {
-        this.content.add(sentence);
+    public void setText(List<Sentence> text) {
+        this.text = text;
     }
 
-    void printText() {
-        for (Sentence sentence : this.content) {
-            System.out.print(sentence);
-        }
+    public String getHeader() {
+        return header;
     }
 
-    void printHeading() {
-        System.out.println(heading);
+    public void setHeader(String header) {
+        this.header = header;
     }
 
-    public void setHeading(Word heading) {
-        this.heading = heading;
-    }
-
-    public Word getHeading() {
-        return this.heading;
+    @Override
+    public String toString() {
+        return "Text{" +
+                "text=" + text +
+                ", header='" + header + '\'' +
+                '}';
     }
 }

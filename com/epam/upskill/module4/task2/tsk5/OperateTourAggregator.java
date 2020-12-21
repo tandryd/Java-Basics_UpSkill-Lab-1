@@ -5,8 +5,7 @@
  */
 package com.epam.upskill.module4.task2.tsk5;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 
 public class OperateTourAggregator {
     public static void main(String[] args) {
@@ -18,7 +17,7 @@ public class OperateTourAggregator {
         tezTour.addTourPackage(new TourPackage("Spain", "Salou", TourPackageType.RECREATION,
                 Transport.PLANE, Food.ALL_INCLUSIVE, 14, 1699.89));
         tezTour.addTourPackage(new TourPackage("Spain", "Madrid", TourPackageType.EXCURSION,
-                Transport.BUS, Food.NOT_INCLUDET, 5, 400.10));
+                Transport.BUS, Food.NOT_INCLUDED, 5, 400.10));
         tezTour.addTourPackage(new TourPackage("Spain", "Malaga", TourPackageType.RECREATION,
                 Transport.PLANE, Food.BREAKFAST, 15, 1400.20));
         tezTour.addTourPackage(new TourPackage("Spain", "Barcelona", TourPackageType.TREATMENT,
@@ -32,14 +31,14 @@ public class OperateTourAggregator {
         tezTour.addTourPackage(new TourPackage("Italy", "Florence", TourPackageType.TREATMENT,
                 Transport.TRAIN, Food.ALL_INCLUSIVE, 13, 1099.11));
         tezTour.addTourPackage(new TourPackage("Italy", "Rome", TourPackageType.SHOPPING,
-                Transport.CAR, Food.NOT_INCLUDET, 5, 599.50));
+                Transport.CAR, Food.NOT_INCLUDED, 5, 599.50));
 
         System.out.println("Select by excursion:");
-        ArrayList<TourPackage> selectByType = tezTour.selectByTourPackageType(TourPackageType.EXCURSION);
+        List<TourPackage> selectByType = tezTour.selectByTourPackageType(TourPackageType.EXCURSION);
         TourAggregator.printTours(selectByType);
 
         System.out.println("\nSelect by ship:");
-        ArrayList<TourPackage> selectByOption = tezTour.selectByMoreOption(Transport.SHIP);
+        List<TourPackage> selectByOption = tezTour.selectByMoreOption(Transport.SHIP);
         TourAggregator.sortByNumberOfDays(selectByOption);
         TourAggregator.printTours(selectByOption);
 
@@ -63,6 +62,7 @@ public class OperateTourAggregator {
         TourAggregator.sortByPrice(selectByOption);
         TourAggregator.printTours(selectByOption);
 
-        tezTour.addClient(client, selectByOption.get(0));
+        client.setTourPackage(selectByOption.get(0));
+        tezTour.addClient(client);
     }
 }

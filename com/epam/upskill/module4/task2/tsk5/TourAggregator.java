@@ -7,11 +7,12 @@ package com.epam.upskill.module4.task2.tsk5;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 
 public class TourAggregator {
     private String nameOfTourOperator;
-    private ArrayList<TourPackage> tourPackages;
-    private ArrayList<Client> clients;
+    private List<TourPackage> tourPackages;
+    private List<Client> clients;
 
     TourAggregator(String nameOfTourOperator) {
         this.nameOfTourOperator = nameOfTourOperator;
@@ -23,13 +24,12 @@ public class TourAggregator {
         tourPackages.add(tour);
     }
 
-    void addClient(Client client, TourPackage tour) {
-        client.setTourPackage(tour);
+    void addClient(Client client) {
         clients.add(client);
     }
 
-    ArrayList<TourPackage> selectByTourPackageType (TourPackageType type){
-        ArrayList<TourPackage> packages = new ArrayList<>();
+    List<TourPackage> selectByTourPackageType (TourPackageType type){
+        List<TourPackage> packages = new ArrayList<>();
         for (TourPackage tour : tourPackages) {
             if (tour.getType().equals(type)) {
                 packages.add(tour);
@@ -38,8 +38,8 @@ public class TourAggregator {
         return packages;
     }
 
-    ArrayList<TourPackage> selectByMoreOption (Transport transport){
-        ArrayList<TourPackage> packages = new ArrayList<>();
+   List<TourPackage> selectByMoreOption (Transport transport){
+        List<TourPackage> packages = new ArrayList<>();
         for (TourPackage tour : tourPackages) {
             if (tour.getTransport().equals(transport)) {
                 packages.add(tour);
@@ -78,7 +78,7 @@ public class TourAggregator {
         return packages;
     }
 
-    static void printTours (ArrayList<TourPackage> packages) {
+    static void printTours (List<TourPackage> packages) {
         if (packages.size() == 0) {
             System.out.println("not found");
             return;
@@ -97,11 +97,11 @@ public class TourAggregator {
         tourPackages.sort(Comparator.comparing(TourPackage::getNumberOfDays));
     }
 
-    static void sortByPrice(ArrayList<TourPackage> tour) {
+    static void sortByPrice(List<TourPackage> tour) {
         tour.sort(Comparator.comparing(TourPackage::getPrice));
     }
 
-    static void sortByNumberOfDays(ArrayList<TourPackage> tour) {
+    static void sortByNumberOfDays(List<TourPackage> tour) {
         tour.sort(Comparator.comparing(TourPackage::getNumberOfDays));
     }
 
@@ -113,11 +113,11 @@ public class TourAggregator {
         this.nameOfTourOperator = nameOfTourOperator;
     }
 
-    public ArrayList<TourPackage> getTourPackages() {
+    public List<TourPackage> getTourPackages() {
         return tourPackages;
     }
 
-    public ArrayList<Client> getClients() {
+    public List<Client> getClients() {
         return clients;
     }
 

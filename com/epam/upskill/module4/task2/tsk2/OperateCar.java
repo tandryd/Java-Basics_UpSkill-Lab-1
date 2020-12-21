@@ -6,6 +6,7 @@ package com.epam.upskill.module4.task2.tsk2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class OperateCar {
     public static void main(String[] args) {
@@ -20,7 +21,18 @@ public class OperateCar {
         volvoXC60.run();
 
         int wheelDiametr = 19;
-        volvoXC60.setWheels(new Wheel(wheelDiametr), new Wheel(wheelDiametr), new Wheel(wheelDiametr), new Wheel(wheelDiametr));
+        Wheel w1 = new Wheel(wheelDiametr);
+        Wheel w2 = new Wheel(wheelDiametr);
+        Wheel w3 = new Wheel(wheelDiametr);
+        Wheel w4 = new Wheel(wheelDiametr);
+
+        List<Wheel> wheels = new ArrayList<>();
+        wheels.add(w1);
+        wheels.add(w2);
+        wheels.add(w3);
+        wheels.add(w4);
+
+        volvoXC60.setWheels(wheels);
         System.out.printf("%nWheels are installed. Trying to drive:\n");
         volvoXC60.run();
 
@@ -28,7 +40,7 @@ public class OperateCar {
         System.out.println("\nSTOP! Something broke:");
         volvoXC60.run();
 
-        volvoXC60.changeWheel();
+        volvoXC60.changeWheel(wheels);
         System.out.println("\nTrying to drive:");
         volvoXC60.run();
 

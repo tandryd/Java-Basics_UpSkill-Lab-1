@@ -5,23 +5,32 @@
 
 package com.epam.upskill.module4.task2.tsk1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Sentence {
-    private String sentence;
+    private List<Word> sentence;
 
-    public Sentence(String sentence) {
-        this.sentence = sentence;
+    public Sentence() {
+        this.sentence = new ArrayList<>();
     }
 
-    @Override
-    public String toString() {
+    public List<Word> addWord(Word word){
+        sentence.add(word);
         return sentence;
     }
 
-    public String getSentence() {
+    public List<Word> deleteWord(Word word){
+        sentence.remove(word);
         return sentence;
     }
 
-    public void setSentence(String sentence) {
+    public List<Word> getSentence() {
+        return sentence;
+    }
+
+    public void setSentence(List<Word> sentence) {
         this.sentence = sentence;
     }
+
 }
