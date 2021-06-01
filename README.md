@@ -1,1 +1,1 @@
-# Java-Basics_UpSkill-Lab-1
+# Java-Basics-UpSkill-Lab
